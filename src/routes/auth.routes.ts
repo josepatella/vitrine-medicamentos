@@ -26,7 +26,7 @@ authRouter.post("/", async (req: Request, res: Response) => {
         const validado = await bcrypty.compare(bodyUser.senha, user.senha)
 
         if(validado){
-            res.status(200).json("123")
+            res.status(200).json({userId: user.id})
             return
         } else {
             res.status(401).json("Não autorizado.")
